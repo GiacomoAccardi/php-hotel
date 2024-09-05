@@ -19,3 +19,4 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 2. inserire nella sezione in alto l'array fornitomi dai tutor alla quale attingere per le info
 3. Popolare dinamicamente il DOM ciclando l'array (Utilizzerò foreach)
 4. Stilizzare la pagina tramite Bootstrap ottenendo così una tabella.
+

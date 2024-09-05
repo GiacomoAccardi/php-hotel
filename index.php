@@ -38,6 +38,9 @@
         ],
 
     ];
+
+    //var_dump($hotels); //dump della variabile per controllare che tutto proceda bene. 
+
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +51,33 @@
     <title>Boolean Hotels</title>
 </head>
 <body>
-    
+
+    <div>
+
+        <h1>Boolean Hotels</h1>
+        <!-- utilizzo forech per ciclare l'arry e popolare il dom con delle liste -->
+        <?php foreach($hotels as $hotel){ ?>
+            <div>
+                <ul>
+                    <li>
+                        <span>Nome: </span><?php echo $hotel['name']; ?>
+                    </li>
+                    <li>
+                        <span>Descrizione: </span><?php echo $hotel['description']; ?>
+                    </li>
+                    <li>
+                        <span>Parcheggio: </span><?php echo $hotel['parking'] ? "Parcheggio disponibile in struttura" : 'Parcheggio non disponibile '; ?>
+                    </li>
+                    <li>
+                        <span>voto: </span><?php echo $hotel['vote']; ?>
+                    </li>
+                    <li>
+                        <span>Distanza dal centro: </span><?php echo $hotel['distance_to_center']; ?>
+                    </li>
+                </ul>
+            </div>
+        <?php } ?>
+    </div>
+
 </body>
 </html>
