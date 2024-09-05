@@ -53,33 +53,45 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-
-    <div>
-
-        <h1>Boolean Hotels</h1>
-        <!-- utilizzo forech per ciclare l'arry e popolare il dom con delle liste -->
-        <?php foreach($hotels as $hotel){ ?>
-            <div>
-                <ul>
-                    <li>
-                        <span>Nome: </span><?php echo $hotel['name']; ?>
-                    </li>
-                    <li>
-                        <span>Descrizione: </span><?php echo $hotel['description']; ?>
-                    </li>
-                    <li>
-                        <span>Parcheggio: </span><?php echo $hotel['parking'] ? "Parcheggio disponibile in struttura" : 'Parcheggio non disponibile '; ?>
-                    </li>
-                    <li>
-                        <span>voto: </span><?php echo $hotel['vote']; ?>
-                    </li>
-                    <li>
-                        <span>Distanza dal centro: </span><?php echo $hotel['distance_to_center']; ?>
-                    </li>
-                </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col12-sm">
+                <h1 class="mt-3 mb-5 text-primary">Boolean Hotels</h1>
+                <table class="table table-success table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Parcheggio</th>
+                            <th scope="col">Voto</th>
+                            <th scope="col">Distanza dal centro</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <?php foreach($hotels as $hotel){ ?>
+                            <tr>
+                                <th scope="row">
+                                    <?php echo $hotel['name']; ?>
+                                </th>
+                                <td>
+                                    <?php echo $hotel['description']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $hotel['parking'] ? "Parcheggio disponibile in struttura" : 'Parcheggio non disponibile '; ?>
+                                </td>
+                                <td>
+                                    <?php echo $hotel['vote']; ?><span>/5</span>
+                                </td>
+                                <td>
+                                    <?php echo $hotel['distance_to_center']; ?><span> mt</span>
+                                </td>
+                            </tr> 
+                        <?php } ?>
+                    </tbody>
+                </table>
             </div>
-        <?php } ?>
+        </div>
     </div>
-
+    <div>
 </body>
 </html>
